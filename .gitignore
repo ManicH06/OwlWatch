@@ -1,10 +1,12 @@
-# Nestjs specific
-/dist
-/node_modules
-/build
-/tmp
+# --- General ---
+node_modules
+**/node_modules/
+dist
+**/dist/
+build
+**/build/
 
-# Logs
+# --- Logs ---
 logs
 *.log
 npm-debug.log*
@@ -13,12 +15,54 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# dotenv environment variable files
-.env
-.env.development
-.env.test
-.env.production
+# --- NestJS Specific ---
+/dist
+/artifacts
+# Fichiers de cache de TypeScript et Nest
+.tsbuildinfo
+.nestjs
 
-# temp directory
+# --- React / Vite ---
+.next
+out
+# Dossier de couverture de tests
+/coverage
+/.nyc_output
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# --- Security / Env ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# --- Runtime / Temp ---
 .temp
 .tmp
+pids
+*.pid
+*.seed
+*.pid.lock
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# --- Database (Local development) ---
+*.db

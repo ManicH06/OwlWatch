@@ -1,0 +1,30 @@
+GET http://localhost:3000/user/
+
+###
+
+POST http://localhost:3000/user/register
+content-type: application/json
+
+{
+  "firstName": "Testé",
+  "lastName": "RoleAdmin23",
+  "email": "john123@owlwatch.com",
+  "password": "Password!31#@!",
+  "confirmPassword": "Password!31#@!",
+  "website": "https://www.testShouldFail.com"
+}
+
+###
+
+POST http://localhost:3000/auth/login
+content-type: application/json
+
+{
+  "email": "john123@owlwatch.com",
+  "password": "Password!31#@!"
+}
+
+###
+
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4xMjNAb3dsd2F0Y2guY29tIiwic3ViIjoiY2U5ZThmM2YtZGMzMi00MjA0LTg0NGMtNDk3MGZkOWI0MDJmIiwiaWF0IjoxNzc1NDkxMzM5LCJleHAiOjE3NzU0OTQ5Mzl9.-75uuIsxSYgI2ky0qYuqeqAMypLF8vrcrXdqc2cVF7A
