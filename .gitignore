@@ -20,7 +20,7 @@ lerna-debug.log*
 /artifacts
 .tsbuildinfo
 .nestjs
-test.http
+rest.http
 
 # --- React / Vite ---
 .next
