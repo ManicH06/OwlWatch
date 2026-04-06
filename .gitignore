@@ -18,14 +18,13 @@ lerna-debug.log*
 # --- NestJS Specific ---
 /dist
 /artifacts
-# Fichiers de cache de TypeScript et Nest
 .tsbuildinfo
 .nestjs
+test.http
 
 # --- React / Vite ---
 .next
 out
-# Dossier de couverture de tests
 /coverage
 /.nyc_output
 
