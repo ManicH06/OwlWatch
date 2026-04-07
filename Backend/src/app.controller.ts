@@ -1,8 +1,7 @@
-import { Controller, Request, Post, UseGuards, Get } from '@nestjs/common';
-import { LocalAuthGuard } from './modules/auth/auth/local.auth.guard';
-import { AuthService } from './modules/auth/auth/auth.service';
+import { Controller, Request, UseGuards, Get } from '@nestjs/common';
+import { AuthService } from './modules/auth/auth.service';
 import { UserDto } from './modules/users/user.dto';
-import { JwtAuthGuard } from './modules/auth/auth/jwt.auth.guard';
+import { JwtAuthGuard } from './modules/auth/jwt.auth.guard';
 
 interface RequestWithUser extends Request {
   user: UserDto;
@@ -12,10 +11,10 @@ interface RequestWithUser extends Request {
 export class AppController {
   constructor(private authService: AuthService) {}
 
-  @UseGuards(LocalAuthGuard)
-  @Post('auth/login')
-  login(@Request() req: RequestWithUser) {
-    return this.authService.login(req.user);
+  @UseGuards(JwtAuthGuard)
+  @Get('/')
+  getWelcome(): string {
+    return 'Welcome to the OwlWatch API!';
   }
 
   @UseGuards(JwtAuthGuard)

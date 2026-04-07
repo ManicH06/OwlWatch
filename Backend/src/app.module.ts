@@ -22,7 +22,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './modules/users/user.entity';
 import { UsersModule } from './modules/users/users.module';
-import { AuthModule } from './modules/auth/auth/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Catch(HttpException)

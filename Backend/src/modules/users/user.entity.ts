@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Monitor } from '../monitors/monitors/monitor.entity';
 
 export enum UserRole {
   USER = 'user',
@@ -37,6 +39,9 @@ export class User {
     default: UserRole.USER,
   })
   role!: UserRole;
+
+  @OneToMany(() => Monitor, (monitor) => monitor.user)
+  monitors?: Monitor[];
 
   @CreateDateColumn()
   createdAt!: Date;
