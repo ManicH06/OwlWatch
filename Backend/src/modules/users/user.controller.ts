@@ -21,7 +21,7 @@ export class UserController {
     return this.usersService.findAll();
   }
 
-  @Post('register')
+  @Post('signup')
   @HttpCode(HttpStatus.CREATED)
   async register(@Body() createUserDto: CreateUserDto) {
     return await this.usersService.create(createUserDto);
