@@ -24,6 +24,8 @@ import { User } from './modules/users/user.entity';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { Monitor } from './modules/monitors/monitors/monitor.entity';
+import { MonitorModule } from './modules/monitors/monitors/monitor.module';
 
 @Catch(HttpException)
 class HttpExceptionFilter extends BaseExceptionFilter {
@@ -51,12 +53,13 @@ class HttpExceptionFilter extends BaseExceptionFilter {
       username: 'owlwatchadmin',
       password: 'admin',
       database: 'owlwatch',
-      entities: [User],
+      entities: [User, Monitor],
       synchronize: true,
     }),
     ConfigModule.forRoot({ isGlobal: true }),
     UsersModule,
     AuthModule,
+    MonitorModule,
   ],
   controllers: [AppController],
   providers: [
